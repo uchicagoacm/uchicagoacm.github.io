@@ -14,7 +14,7 @@
 
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: #700303;
+      background: radial-gradient(ellipse at center, #800404 0%, #700303 40%, #5a0202 100%);
       color: #ffffff;
       height: 100vh;
       display: flex;
@@ -27,17 +27,18 @@
       text-align: center;
       opacity: 0;
       transform: translateY(20px);
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.2s;
+      animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+      animation-delay: 0.1s;
     }
 
     .landing-logo {
       width: 180px;
       height: auto;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
       opacity: 0;
-      animation: fadeIn 1s ease forwards;
-      animation-delay: 0.4s;
+      animation: fadeIn 0.8s ease forwards;
+      animation-delay: 0.3s;
+      filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
     }
 
     .landing-title {
@@ -46,14 +47,20 @@
       letter-spacing: 3px;
       text-transform: uppercase;
       color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 8px;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeIn 0.7s ease forwards;
+      animation-delay: 0.6s;
     }
 
     .landing-name {
       font-size: 42px;
       font-weight: 700;
-      letter-spacing: -1px;
-      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+      margin-bottom: 12px;
+      opacity: 0;
+      animation: fadeIn 0.7s ease forwards;
+      animation-delay: 0.75s;
     }
 
     .landing-subtitle {
@@ -61,6 +68,9 @@
       font-weight: 400;
       color: rgba(255, 255, 255, 0.6);
       margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeIn 0.7s ease forwards;
+      animation-delay: 0.9s;
     }
 
     .enter-btn {
@@ -77,13 +87,14 @@
       transition: all 0.3s ease;
       opacity: 0;
       animation: fadeIn 0.8s ease forwards;
-      animation-delay: 1s;
+      animation-delay: 1.2s;
     }
 
     .enter-btn:hover {
       background: rgba(255, 255, 255, 0.15);
       border-color: rgba(255, 255, 255, 0.8);
       transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
     }
 
     @keyframes fadeUp {
@@ -102,7 +113,7 @@
 </head>
 <body>
   <div class="landing-container">
-    <img src="images/logo.jpg" alt="UChicago ACM Logo" class="landing-logo">
+    <img src="images/logo.png" alt="UChicago ACM Logo" class="landing-logo">
     <p class="landing-title">University of Chicago</p>
     <h1 class="landing-name">Association for Computing Machinery</h1>
     <p class="landing-subtitle">Student Chapter</p>
