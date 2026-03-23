@@ -1,0 +1,443 @@
+/* ===========================
+   UChicago ACM — Main Styles
+   Clean Minimal Modernization
+   =========================== */
+
+/* Custom Properties */
+:root {
+  --color-primary: #700303;
+  --color-primary-hover: #8b1a1a;
+  --color-primary-light: #f5e6e6;
+  --color-bg: #ffffff;
+  --color-surface: #ffffff;
+  --color-text: #1a1a1a;
+  --color-text-secondary: #666666;
+  --color-border: #e5e5e5;
+  --color-shadow: rgba(0, 0, 0, 0.1);
+
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sidebar-width: 280px;
+  --transition-speed: 0.3s;
+}
+
+/* Reset */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed);
+}
+
+a:hover {
+  color: var(--color-primary-hover);
+}
+
+/* ===========================
+   Sidebar Navigation
+   =========================== */
+
+.vertical-navbar {
+  background-color: var(--color-primary);
+  height: 100vh;
+  width: var(--sidebar-width);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 32px 20px;
+  z-index: 100;
+  overflow-y: auto;
+}
+
+.nav-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.nav-logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.nav-header h2 {
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.65);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 10px 24px;
+  width: 100%;
+  text-align: center;
+  transition: all var(--transition-speed);
+  border-radius: 8px;
+  margin-bottom: 4px;
+}
+
+.nav-link:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link.active {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+}
+
+/* ===========================
+   Content Area
+   =========================== */
+
+#content-container {
+  margin-left: var(--sidebar-width);
+  width: calc(100% - var(--sidebar-width));
+  min-height: 100vh;
+  padding: 60px 48px;
+}
+
+.content-section {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.content-section.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Section Headers */
+.content-section > header {
+  margin-bottom: 40px;
+}
+
+.content-section > header h1 {
+  color: var(--color-primary);
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+/* ===========================
+   Sections — General
+   =========================== */
+
+section {
+  margin-bottom: 36px;
+}
+
+section h2 {
+  color: var(--color-primary);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--color-primary-light);
+}
+
+section p,
+section .body-text {
+  color: var(--color-text);
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+section .cta-link {
+  display: inline-block;
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 8px 0;
+  border-bottom: 2px solid var(--color-primary);
+  transition: all var(--transition-speed);
+}
+
+section .cta-link:hover {
+  color: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+/* ===========================
+   Officer Cards
+   =========================== */
+
+.officers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 32px;
+}
+
+.officer-card {
+  background: var(--color-surface);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--color-shadow);
+  overflow: hidden;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.officer-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.officer-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.officer-card-body {
+  padding: 20px;
+}
+
+.officer-card .title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-primary);
+  margin-bottom: 4px;
+}
+
+.officer-card .name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 12px;
+}
+
+.officer-card .bio {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+}
+
+/* ===========================
+   Committee Sections
+   =========================== */
+
+.committee-directors {
+  background: var(--color-primary-light);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.schedule-list {
+  list-style: none;
+  padding: 0;
+}
+
+.schedule-list li {
+  padding: 12px 16px;
+  border-left: 3px solid var(--color-primary);
+  margin-bottom: 8px;
+  background: #fafafa;
+  border-radius: 0 8px 8px 0;
+  font-size: 15px;
+}
+
+.schedule-list li strong {
+  color: var(--color-primary);
+}
+
+.schedule-note {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  font-style: italic;
+  margin-top: 12px;
+}
+
+/* Bullet list for committee features */
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.feature-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+}
+
+/* ===========================
+   Events Section
+   =========================== */
+
+.event-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: box-shadow var(--transition-speed);
+}
+
+.event-card:hover {
+  box-shadow: 0 4px 12px var(--color-shadow);
+}
+
+.event-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 8px;
+}
+
+.event-card .event-details {
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  margin-bottom: 8px;
+}
+
+.event-card .event-details i {
+  margin-right: 6px;
+  color: var(--color-primary);
+}
+
+/* ===========================
+   Contact Section
+   =========================== */
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.contact-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-text);
+  letter-spacing: 2px;
+}
+
+.contact-info {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-bottom: 6px;
+}
+
+/* ===========================
+   Mobile Responsive
+   =========================== */
+
+@media only screen and (max-width: 768px) {
+  :root {
+    --sidebar-width: 0px;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  .vertical-navbar {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 4px;
+  }
+
+  .nav-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 0;
+    margin-right: 8px;
+  }
+
+  .nav-logo {
+    width: 36px;
+  }
+
+  .nav-header h2 {
+    font-size: 8px;
+    display: none;
+  }
+
+  .nav-link {
+    font-size: 12px;
+    padding: 6px 10px;
+    margin-bottom: 0;
+  }
+
+  #content-container {
+    margin-left: 0;
+    width: 100%;
+    padding: 80px 20px 40px;
+  }
+
+  .content-section > header h1 {
+    font-size: 24px;
+  }
+
+  section h2 {
+    font-size: 18px;
+  }
+
+  .officers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .officer-card img {
+    height: 220px;
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  .officers-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

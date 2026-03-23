@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UChicago ACM</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #700303;
+      color: #ffffff;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .landing-container {
+      text-align: center;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    .landing-logo {
+      width: 180px;
+      height: auto;
+      margin-bottom: 32px;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      animation-delay: 0.4s;
+    }
+
+    .landing-title {
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 8px;
+    }
+
+    .landing-name {
+      font-size: 42px;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 8px;
+    }
+
+    .landing-subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 48px;
+    }
+
+    .enter-btn {
+      display: inline-block;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 14px 40px;
+      border: 2px solid rgba(255, 255, 255, 0.4);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      opacity: 0;
+      animation: fadeIn 0.8s ease forwards;
+      animation-delay: 1s;
+    }
+
+    .enter-btn:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.8);
+      transform: translateY(-2px);
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="landing-container">
+    <img src="images/logo.jpg" alt="UChicago ACM Logo" class="landing-logo">
+    <p class="landing-title">University of Chicago</p>
+    <h1 class="landing-name">Association for Computing Machinery</h1>
+    <p class="landing-subtitle">Student Chapter</p>
+    <a href="main.html" class="enter-btn" id="enter-btn">Enter</a>
+  </div>
+
+  <script>
+    document.getElementById('enter-btn').addEventListener('click', function () {
+      document.cookie = 'landing_page_seen=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
+    });
+  </script>
+</body>
+</html>
