@@ -3,230 +3,410 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UChicago ACM</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
-  <style>
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <title>UChicago ACM — Association for Computing Machinery</title>
+  <meta name="description" content="The University of Chicago student chapter of the Association for Computing Machinery. Machine learning, software engineering, and a community of builders.">
 
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(ellipse at center, #800404 0%, #700303 40%, #5a0202 100%);
-      color: #ffffff;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
-
-    .landing-container {
-      text-align: center;
-      width: min(920px, calc(100vw - 40px));
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.9s cubic-bezier(0.23, 1, 0.32, 1) forwards;
-      animation-delay: 0.1s;
-    }
-
-    .brand-lockup {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 30px;
-      margin-bottom: 36px;
-      opacity: 0;
-      animation: fadeIn 0.8s ease forwards;
-      animation-delay: 0.3s;
-    }
-
-    .landing-logo {
-      width: 180px;
-      height: auto;
-      flex: 0 0 auto;
-      filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.3));
-    }
-
-    .partnership-mark {
-      color: rgba(255, 255, 255, 0.55);
-      font-size: 44px;
-      font-weight: 300;
-      line-height: 1;
-    }
-
-    .visa-logo {
-      position: relative;
-      width: 180px;
-      height: 180px;
-      flex: 0 0 auto;
-      display: grid;
-      place-items: center;
-      filter: drop-shadow(0 4px 24px rgba(0, 0, 0, 0.18));
-    }
-
-    .visa-animation {
-      position: absolute;
-      inset: 0;
-    }
-
-    .visa-animation svg {
-      display: block;
-      width: 100% !important;
-      height: 100% !important;
-    }
-
-    .visa-fallback {
-      color: #1634cb;
-      font-size: 48px;
-      font-weight: 700;
-      font-style: italic;
-      letter-spacing: -4px;
-      transition: opacity 0.2s ease;
-    }
-
-    .visa-logo.is-loaded .visa-fallback {
-      opacity: 0;
-    }
-
-    .landing-title {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.7);
-      margin-bottom: 12px;
-      opacity: 0;
-      animation: fadeIn 0.7s ease forwards;
-      animation-delay: 0.6s;
-    }
-
-    .landing-name {
-      font-size: 42px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      margin-bottom: 12px;
-      opacity: 0;
-      animation: fadeIn 0.7s ease forwards;
-      animation-delay: 0.75s;
-    }
-
-    .landing-subtitle {
-      font-size: 16px;
-      font-weight: 400;
-      color: rgba(255, 255, 255, 0.6);
-      margin-bottom: 48px;
-      opacity: 0;
-      animation: fadeIn 0.7s ease forwards;
-      animation-delay: 0.9s;
-    }
-
-    .enter-btn {
-      display: inline-block;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      padding: 14px 40px;
-      border: 2px solid rgba(255, 255, 255, 0.4);
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      opacity: 0;
-      animation: fadeIn 0.8s ease forwards;
-      animation-delay: 1.2s;
-    }
-
-    .enter-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: rgba(255, 255, 255, 0.8);
-      transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.1);
-    }
-
-    @keyframes fadeUp {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .brand-lockup {
-        gap: 18px;
-        margin-bottom: 30px;
-      }
-
-      .landing-logo,
-      .visa-logo {
-        width: 116px;
-        height: 116px;
-      }
-
-      .partnership-mark {
-        font-size: 32px;
-      }
-
-      .landing-title {
-        font-size: 11px;
-        letter-spacing: 2.4px;
-      }
-
-      .landing-name {
-        font-size: clamp(27px, 8vw, 36px);
-      }
-
-      .landing-subtitle {
-        margin-bottom: 38px;
-      }
-    }
-  </style>
+  <link rel="icon" href="images/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400;500&display=swap">
+  <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <div class="landing-container">
-    <div class="brand-lockup" aria-label="UChicago ACM in partnership with Visa">
-      <img src="images/logo.png" alt="UChicago ACM logo" class="landing-logo">
-      <span class="partnership-mark" aria-hidden="true">&times;</span>
-      <div class="visa-logo" id="visa-logo" role="img" aria-label="Visa logo">
-        <span class="visa-fallback" aria-hidden="true">VISA</span>
-        <div class="visa-animation" id="visa-animation" aria-hidden="true"></div>
+<body data-theme="dark">
+
+  <!-- ============ PRELOADER ============ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-inner">
+      <div class="preloader-lockup" aria-label="UChicago ACM in partnership with Visa">
+        <div class="preloader-logo" aria-hidden="true">
+          <span class="preloader-char">A</span><span class="preloader-char">C</span><span class="preloader-char">M</span>
+        </div>
+        <span class="preloader-partner-mark" aria-hidden="true">&times;</span>
+        <div class="preloader-visa" id="preloader-visa" role="img" aria-label="Visa">
+          <span class="preloader-visa-fallback" aria-hidden="true">VISA</span>
+          <div class="preloader-visa-animation" id="preloader-visa-animation" aria-hidden="true"></div>
+        </div>
       </div>
+      <div class="preloader-track"><div class="preloader-bar" id="preloader-bar"></div></div>
+      <div class="preloader-count" id="preloader-count">00</div>
     </div>
-    <p class="landing-title">University of Chicago</p>
-    <h1 class="landing-name">Association for Computing Machinery</h1>
-    <p class="landing-subtitle">Student Chapter</p>
-    <a href="main.html" class="enter-btn" id="enter-btn">Enter</a>
+    <div class="preloader-curtain"></div>
   </div>
 
+  <!-- ============ CUSTOM CURSOR ============ -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ============ GRAIN OVERLAY ============ -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ APPLICATION ANNOUNCEMENT ============ -->
+  <a class="application-banner" href="https://forms.gle/3kzHJTFX5JuPmnc29" target="_blank" rel="noopener noreferrer" aria-label="Applications are live now. Open the application form.">
+    <span class="application-banner-dot" aria-hidden="true"></span>
+    <strong>Applications are live now</strong>
+    <span class="application-banner-cta">Apply&nbsp;now&nbsp;↗</span>
+  </a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="nav">
+    <a href="#hero" class="nav-brand" data-cursor="hover">
+      <img src="images/logo.png" alt="UChicago ACM logo">
+      <span>UChicago&nbsp;<em>ACM</em></span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="#about" class="nav-link" data-cursor="hover"><span data-text="About">About</span></a>
+      <a href="#officers" class="nav-link" data-cursor="hover"><span data-text="Officers">Officers</span></a>
+      <a href="#committees" class="nav-link" data-cursor="hover"><span data-text="Committees">Committees</span></a>
+      <a href="#events" class="nav-link" data-cursor="hover"><span data-text="Events">Events</span></a>
+      <a href="#contact" class="nav-cta" data-cursor="hover" data-magnetic>Join&nbsp;Us</a>
+    </nav>
+    <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false" data-cursor="hover">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <!-- ============ MOBILE MENU ============ -->
+  <div class="menu-overlay" id="menu-overlay" aria-hidden="true">
+    <nav class="menu-links" aria-label="Mobile">
+      <a href="#about" class="menu-link"><small>01</small>About</a>
+      <a href="#officers" class="menu-link"><small>02</small>Officers</a>
+      <a href="#committees" class="menu-link"><small>03</small>Committees</a>
+      <a href="#events" class="menu-link"><small>04</small>Events</a>
+      <a href="#contact" class="menu-link"><small>05</small>Contact</a>
+    </nav>
+    <div class="menu-footer">
+      <a href="mailto:uchicagoacm@gmail.com">uchicagoacm@gmail.com</a>
+      <a href="https://instagram.com/uchicagoacm" target="_blank" rel="noopener noreferrer">@uchicagoacm</a>
+    </div>
+  </div>
+
+  <main id="smooth-content">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <canvas id="webgl" aria-hidden="true"></canvas>
+      <div class="hero-content">
+        <p class="hero-overline"><span class="hero-overline-rule"></span>University of Chicago · Student Chapter</p>
+        <h1 class="hero-title" aria-label="Association for Computing Machinery">
+          <span class="hero-line"><span class="hero-word" data-split>Association</span></span>
+          <span class="hero-line"><span class="hero-word hero-word--outline" data-split>for Computing</span></span>
+          <span class="hero-line"><span class="hero-word" data-split>Machinery</span></span>
+        </h1>
+        <p class="hero-sub">The world's largest computing society —<br>rebuilt by students, for students, in Hyde Park.</p>
+        <div class="hero-actions">
+          <a href="#committees" class="btn btn--solid" data-cursor="hover" data-magnetic>Explore committees</a>
+          <a href="#contact" class="btn btn--ghost" data-cursor="hover" data-magnetic>Get in touch</a>
+        </div>
+      </div>
+      <div class="hero-meta">
+        <span class="hero-meta-item">EST. ACM 1947</span>
+        <span class="hero-meta-item">CHICAGO, IL</span>
+        <span class="hero-meta-item">41.7886° N, 87.5987° W</span>
+      </div>
+      <div class="scroll-hint" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-hint-line"></div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track" id="marquee-track">
+        <span class="marquee-item">Machine Learning</span><span class="marquee-dot">●</span>
+        <span class="marquee-item marquee-item--outline">Software Engineering</span><span class="marquee-dot">●</span>
+        <span class="marquee-item">Guest Lectures</span><span class="marquee-dot">●</span>
+        <span class="marquee-item marquee-item--outline">Interview Prep</span><span class="marquee-dot">●</span>
+        <span class="marquee-item">Group Projects</span><span class="marquee-dot">●</span>
+        <span class="marquee-item marquee-item--outline">Networking</span><span class="marquee-dot">●</span>
+      </div>
+    </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about">
+      <div class="section-head">
+        <span class="section-index">01</span>
+        <h2 class="section-title" data-reveal-title>Advancing computing as a science <em>and a profession</em></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-copy">
+          <p class="about-lede" data-reveal>UChicago ACM fosters communication and collaboration within the University's computer science community — supporting members' growth through lifelong learning, career development, and professional networking.</p>
+          <p data-reveal>As a student chapter of the world's largest educational and scientific computing society, we run two hands-on committees — machine learning and software engineering — that meet weekly to take students beyond the classroom. Our general meetings connect students with professionals across every corner of the industry.</p>
+          <p class="about-join" data-reveal>Quarterly recruitment begins next fall. <a href="#contact" data-cursor="hover">Stay tuned →</a></p>
+        </div>
+        <div class="about-stats">
+          <div class="stat" data-reveal>
+            <span class="stat-num" data-count="2">0</span>
+            <span class="stat-label">Active committees</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat-num" data-count="9">0</span>
+            <span class="stat-label">Officers</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat-num" data-count="52">0</span>
+            <span class="stat-label">Sessions a year</span>
+          </div>
+          <div class="stat" data-reveal>
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Things to build</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OFFICERS ============ -->
+    <section class="section officers" id="officers">
+      <div class="section-head">
+        <span class="section-index">02</span>
+        <h2 class="section-title" data-reveal-title>The people <em>behind the chapter</em></h2>
+      </div>
+
+      <div class="officers-grid">
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/efe ucer.jpg" alt="Nusret Efe Ucer" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">President</span>
+            <h3 class="officer-name">Nusret Efe Ucer</h3>
+            <p class="officer-bio">Class of 2028 · Sightseeing, traveling &amp; history</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/martin.jpeg" alt="Martin Utrera" style="object-position: center 8%;" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Vice President</span>
+            <h3 class="officer-name">Martin Utrera</h3>
+            <p class="officer-bio">Class of 2027 · Badminton &amp; guitar</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/defne.jpeg" alt="Defne Meric Erdogan" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Vice President</span>
+            <h3 class="officer-name">Defne Meric Erdogan</h3>
+            <p class="officer-bio">Class of 2028 · Rowing</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/konnor.jpeg" alt="Konnor Lo" style="object-position: center 35%;" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Senior ML/AI Director</span>
+            <h3 class="officer-name">Konnor Lo</h3>
+            <p class="officer-bio">Class of 2028</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/anwar.jpeg" alt="Anwar Kader" style="object-position: center 55%;" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Senior SWE Director</span>
+            <h3 class="officer-name">Anwar Kader</h3>
+            <p class="officer-bio">Class of 2028 · Pickleball</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/rithvik.jpeg" alt="Rithvik Jandhyala" style="object-position: center 20%;" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Finance Director</span>
+            <h3 class="officer-name">Rithvik Jandhyala</h3>
+            <p class="officer-bio">Class of 2029 · Guitar &amp; songwriting</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media"><img src="images/pictures/shriya.jpeg" alt="Shriya Muthukumar" style="object-position: center 45%;" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Outreach Coordinator</span>
+            <h3 class="officer-name">Shriya Muthukumar</h3>
+            <p class="officer-bio">Class of 2029 · Photography &amp; 3D printing</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media officer-media--contain" style="background-color:#6e8b3d;"><img src="images/pictures/jason.jpeg" alt="Jason Zhang" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Junior ML/AI Director</span>
+            <h3 class="officer-name">Jason Zhang</h3>
+            <p class="officer-bio">Class of 2029 · Reading &amp; skiing</p>
+          </div>
+        </article>
+        <article class="officer" data-tilt data-reveal>
+          <div class="officer-media officer-media--contain" style="background-color:#6b503c;"><img src="images/pictures/xander.jpeg" alt="Xander Hung" loading="lazy"></div>
+          <div class="officer-info">
+            <span class="officer-role">Junior SWE Director</span>
+            <h3 class="officer-name">Xander Hung</h3>
+            <p class="officer-bio">Class of 2028 · Fishing</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ COMMITTEES ============ -->
+    <section class="section committees" id="committees">
+      <div class="section-head">
+        <span class="section-index">03</span>
+        <h2 class="section-title" data-reveal-title>Two tracks, <em>one community</em></h2>
+      </div>
+
+      <div class="committee-stack">
+        <article class="committee" data-reveal>
+          <div class="committee-head" data-cursor="hover">
+            <span class="committee-tag">ML</span>
+            <h3 class="committee-title">Machine Learning</h3>
+            <span class="committee-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-body-inner">
+              <div class="committee-directors">
+                <span><em>Senior Director</em>Konnor Lo</span>
+                <span><em>Junior Director</em>Jason Zhang</span>
+              </div>
+              <p>Open to any experience level — the ML Committee starts each winter with intensive, interactive ramp-up workshops, then dives into an onboarding project.</p>
+              <ul class="committee-list">
+                <li>Workshops from basic to advanced ML/AI topics</li>
+                <li>Hands-on coding sessions across model families</li>
+                <li>A community collaborating on global ML/AI challenges</li>
+                <li>Guest lectures from industry experts &amp; researchers</li>
+              </ul>
+              <p class="committee-note">Meets weekly · schedule TBD · recordings posted in Slack</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="committee" data-reveal>
+          <div class="committee-head" data-cursor="hover">
+            <span class="committee-tag">SWE</span>
+            <h3 class="committee-title">Software Engineering</h3>
+            <span class="committee-toggle" aria-hidden="true">+</span>
+          </div>
+          <div class="committee-body">
+            <div class="committee-body-inner">
+              <div class="committee-directors">
+                <span><em>Senior Director</em>Anwar Kader</span>
+                <span><em>Junior Director</em>Xander Hung</span>
+              </div>
+              <p>Built around the skills that actually get you hired — and the habits that make you a great engineer once you are.</p>
+              <ul class="committee-list">
+                <li>Interview prep: algorithms &amp; data structures</li>
+                <li>Git, version control &amp; collaborative workflows</li>
+                <li>Agile development &amp; product management</li>
+                <li>Hands-on side projects &amp; quarterly group builds</li>
+              </ul>
+              <p class="committee-note">Meets weekly · schedule TBD · recordings posted in Slack</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ EVENTS ============ -->
+    <section class="section events" id="events">
+      <div class="section-head">
+        <span class="section-index">04</span>
+        <h2 class="section-title" data-reveal-title>What's <em>coming up</em></h2>
+      </div>
+      <div class="events-list">
+        <a class="event-row" data-reveal data-cursor="hover" href="#contact">
+          <span class="event-date">Weekly<em>TBD</em></span>
+          <span class="event-name">ML Committee Meeting</span>
+          <span class="event-loc">Location TBD</span>
+          <span class="event-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="event-row" data-reveal data-cursor="hover" href="#contact">
+          <span class="event-date">Weekly<em>TBD</em></span>
+          <span class="event-name">SWE Committee Meeting</span>
+          <span class="event-loc">Location TBD</span>
+          <span class="event-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="event-row" data-reveal data-cursor="hover" href="#contact">
+          <span class="event-date">Special<em>TBD</em></span>
+          <span class="event-name">Speaker Event — Announcing Soon</span>
+          <span class="event-loc">Location TBD</span>
+          <span class="event-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="events-note" data-reveal>Fall recruitment opens quarterly — follow <a href="https://instagram.com/uchicagoacm" target="_blank" rel="noopener noreferrer" data-cursor="hover">@uchicagoacm</a> for announcements.</p>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+      <div class="section-head">
+        <span class="section-index">05</span>
+        <h2 class="section-title" data-reveal-title>Let's build <em>something together</em></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-side">
+          <p data-reveal>Questions, project ideas, sponsorships — we read everything.</p>
+          <a class="contact-mail" href="mailto:uchicagoacm@gmail.com" data-cursor="hover" data-reveal>uchicagoacm<wbr>@gmail.com</a>
+          <a class="contact-ig" href="https://instagram.com/uchicagoacm" target="_blank" rel="noopener noreferrer" data-cursor="hover" data-reveal>Instagram ↗</a>
+        </div>
+
+        <form class="contact-form" id="contact-form" action="mailto:uchicagoacm@gmail.com" method="post" enctype="text/plain" novalidate>
+          <div class="field" data-reveal>
+            <input type="text" id="f-name" name="name" placeholder=" " required autocomplete="name">
+            <label for="f-name">My name is</label>
+          </div>
+          <div class="field" data-reveal>
+            <input type="email" id="f-email" name="email" placeholder=" " required autocomplete="email">
+            <label for="f-email">My email is</label>
+          </div>
+          <div class="field" data-reveal>
+            <select id="f-subject" name="subject" required>
+              <option value="" disabled selected hidden></option>
+              <option>I'd like to start a project</option>
+              <option>I'd like to ask a question</option>
+              <option>I'd like to be a sponsor</option>
+            </select>
+            <label for="f-subject">I'm reaching out because</label>
+          </div>
+          <div class="field" data-reveal>
+            <textarea id="f-message" name="message" rows="4" placeholder=" " required></textarea>
+            <label for="f-message">I'd like to talk about</label>
+          </div>
+          <button type="submit" class="btn btn--solid contact-submit" data-cursor="hover" data-magnetic data-reveal>
+            <span>Send message</span>
+          </button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="footer">
+      <div class="footer-big" aria-hidden="true">
+        <span class="footer-big-text" id="footer-big-text">ACM·UCHICAGO·ACM·UCHICAGO·</span>
+      </div>
+      <div class="footer-bar">
+        <span>© <span id="year">2026</span> UChicago ACM</span>
+        <span>Association for Computing Machinery · Student Chapter</span>
+        <button class="back-top" id="back-top" data-cursor="hover" data-magnetic>Back to top ↑</button>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ============ LIBS ============ -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.149.0/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/build/player/lottie.min.js"></script>
+
   <script>
     if (window.lottie) {
-      const visaLogo = document.getElementById('visa-logo');
-      const visaAnimation = lottie.loadAnimation({
-        container: document.getElementById('visa-animation'),
+      const visa = document.getElementById('preloader-visa');
+      const animation = lottie.loadAnimation({
+        container: document.getElementById('preloader-visa-animation'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
         path: 'images/visa-logo.json'
       });
 
-      visaAnimation.addEventListener('DOMLoaded', function () {
-        visaLogo.classList.add('is-loaded');
+      animation.addEventListener('DOMLoaded', function () {
+        visa.classList.add('is-loaded');
       });
     }
-
-    document.getElementById('enter-btn').addEventListener('click', function () {
-      document.cookie = 'landing_page_seen=true; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/';
-    });
   </script>
+
+  <script src="js/scene.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>

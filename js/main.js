@@ -58,6 +58,9 @@
     .to('.preloader-char', {
       y: 0, duration: 0.9, stagger: 0.08, ease: 'expo.out',
     })
+    .to('.preloader-partner-mark, .preloader-visa', {
+      opacity: 1, y: 0, duration: 0.85, stagger: 0.08, ease: 'expo.out',
+    }, '<0.12')
     .to('#preloader-bar', {
       scaleX: 1, duration: 1.4, ease: 'power2.inOut',
     }, '<0.2')
@@ -250,7 +253,7 @@
         e.preventDefault();
         if (menuOpen) toggleMenu();
         const dest = link.classList.contains('back-top') ? 0 : target;
-        if (lenisInstance) lenisInstance.scrollTo(dest, { offset: -70, duration: 1.4 });
+        if (lenisInstance) lenisInstance.scrollTo(dest, { offset: -108, duration: 1.4 });
         else (dest === 0 ? window.scrollTo({ top: 0, behavior: 'smooth' }) : target.scrollIntoView({ behavior: 'smooth' }));
       });
     });
